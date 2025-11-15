@@ -469,3 +469,268 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+/* ==== Better hierarchy inside sections (experience, etc.) ==== */
+
+/* Mini-cards para cada item */
+.section .item {
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 16px;
+  padding: 14px 18px 12px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(15, 118, 230, 0.45);
+  border-left: 3px solid rgba(56, 189, 248, 0.9);
+}
+
+/* Un poco más de espacio entre tarjetas en Work Experience */
+#experience .item + .item {
+  margin-top: 10px;
+}
+
+/* Título del puesto (más grande y con jerarquía) */
+.section .item h3 {
+  margin: 0 0 4px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+/* Línea de empresa · ciudad · fechas: estilo “meta” */
+.section .item-meta {
+  margin: 0;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #9ca3af;
+}
+
+/* Texto normal dentro de la card */
+.section .item-text {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Bullets: mejor interlineado y aire */
+.section .item-list {
+  margin: 8px 0 4px 18px;
+  padding: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.section .item-list li + li {
+  margin-top: 4px;
+}
+/* =========================================================
+   WORK EXPERIENCE  (section #experience)
+   ========================================================= */
+
+#experience .item {
+  background: rgba(15, 23, 42, 0.96);
+  border-radius: 16px;
+  padding: 14px 18px 12px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.55);
+  border-left: 3px solid rgba(56, 189, 248, 0.95);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.75);
+}
+
+#experience .item h3 {
+  margin: 0 0 2px;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+#experience .item-meta {
+  margin: 0 0 6px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+
+#experience .item-list {
+  margin: 6px 0 2px 18px;
+  padding: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+#experience .item-list li + li {
+  margin-top: 4px;
+}
+
+/* =========================================================
+   MAJOR PROJECTS  (section #projects)
+   ========================================================= */
+
+#projects .cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+@media (max-width: 960px) {
+  #projects .cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+#projects .card {
+  background: radial-gradient(circle at top left, #020617, #020617 70%);
+  border-radius: 18px;
+  padding: 14px 16px 14px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.8);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#projects .card-tag {
+  align-self: flex-start;
+  padding: 2px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(56, 189, 248, 0.7);
+  background: rgba(15, 23, 42, 0.9);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+}
+
+#projects .card h3 {
+  margin: 4px 0 2px;
+  font-size: 1.02rem;
+  font-weight: 600;
+}
+
+#projects .card-text {
+  margin: 0 0 4px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+#projects .card-list {
+  margin: 0 0 0 16px;
+  padding: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+#projects .card-list li + li {
+  margin-top: 4px;
+}
+
+/* =========================================================
+   ACHIEVEMENTS & TRAINING  +  LEADERSHIP & ACTIVITIES
+   (section #achievements, dos columnas)
+   ========================================================= */
+
+/* Títulos de sección dentro de la doble columna */
+#achievements .two-columns > div:first-child .section-header h2,
+#achievements .two-columns > div:last-child .section-header h2 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+/* Subtítulos "Awards", "Training & Certifications" */
+#achievements .subheading {
+  margin: 8px 0 4px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+
+/* ------- Awards (lista del lado izquierdo) ------- */
+
+#achievements .two-columns > div:first-child ul.item-list {
+  margin: 8px 0 12px 0 !important;
+  padding: 0;
+  list-style: none;
+}
+
+#achievements .two-columns > div:first-child ul.item-list li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+#achievements .two-columns > div:first-child ul.item-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+/* ------- Training card (Cybersecurity Bootcamp) ------- */
+
+#achievements .two-columns > div:first-child .item {
+  background: rgba(15, 23, 42, 0.96);
+  border-radius: 14px;
+  padding: 10px 14px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  border-left: 3px solid rgba(56, 189, 248, 0.9);
+}
+
+#achievements .two-columns > div:first-child .item h3 {
+  margin: 0 0 2px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+#achievements .two-columns > div:first-child .item-meta {
+  margin: 0 0 4px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+#achievements .two-columns > div:first-child .item-text {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+/* ------- Leadership & Activities (columna derecha) ------- */
+
+#achievements .two-columns > div:last-child .item {
+  background: rgba(15, 23, 42, 0.96);
+  border-radius: 14px;
+  padding: 10px 14px 10px 16px !important;
+  margin-top: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  border-left: 3px solid rgba(56, 189, 248, 0.9) !important;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.7);
+}
+
+#achievements .two-columns > div:last-child .item h3 {
+  margin: 0 0 2px;
+  font-size: 0.96rem;
+  font-weight: 600;
+}
+
+#achievements .two-columns > div:last-child .item-meta {
+  margin: 0 0 4px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+#achievements .two-columns > div:last-child .item-list {
+  margin: 4px 0 0 14px;
+  padding: 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+#achievements .two-columns > div:last-child .item-list li + li {
+  margin-top: 3px;
+}
+
